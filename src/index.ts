@@ -50,30 +50,7 @@ function VitePluginMarkdown(inlineOptions?: Partial<Options>): Plugin {
             }
           }
         })
-        .use(rehypeAutoLinkHeadings, {
-          content: {
-            type: "element",
-            tagName: "svg",
-            properties: {
-              viewBox: "0 0 16 16",
-              xmlns: "http://www.w3.org/2000/svg",
-              width: "16",
-              height: "16",
-              fill: "currentColor",
-            },
-            children: [
-              {
-                type: "element",
-                tagName: "path",
-                properties: {
-                  fillRule: "evenodd",
-                  clipRule: "evenodd",
-                  d: "m2.475 10.646 2.121-2.12a.5.5 0 0 1 .707 0 .25.25 0 0 0 .354 0l.707-.708a.25.25 0 0 0 0-.354 2 2 0 0 0-2.828 0L1.414 9.586a2 2 0 0 0 0 2.828l2.122 2.122a2 2 0 0 0 2.828 0l2.121-2.122a2 2 0 0 0 0-2.828.25.25 0 0 0-.353 0l-.707.707a.25.25 0 0 0 0 .353.5.5 0 0 1 0 .708l-2.122 2.12a.5.5 0 0 1-.707 0l-2.121-2.12a.5.5 0 0 1 0-.708ZM9.192 8.88a.25.25 0 0 1 0-.354l.707-.707a.25.25 0 0 1 .354 0 .5.5 0 0 0 .707 0l2.121-2.121a.5.5 0 0 0 0-.707l-2.12-2.122a.5.5 0 0 0-.708 0L8.132 4.99a.5.5 0 0 0 0 .707.25.25 0 0 1 0 .353l-.707.707a.25.25 0 0 1-.354 0 2 2 0 0 1 0-2.828l2.121-2.121a2 2 0 0 1 2.829 0l2.121 2.12a2 2 0 0 1 0 2.83l-2.121 2.12a2 2 0 0 1-2.829 0Zm-3.535.353a.75.75 0 0 0 1.06 1.06L9.9 7.112a.75.75 0 1 0-1.06-1.06L5.657 9.231Z",
-                },
-              },
-            ],
-          },
-        })
+        .use(rehypeAutoLinkHeadings)
         .use(() => (tree, vFile) => {
           vFile.data.toc = [];
 
